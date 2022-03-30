@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.springrest.crud.entities.Course;
 
 @Service
-public class CourseServiceImpl implements CourseSerivce {
+public class CourseServiceImpl implements CourseService {
 
     List<Course> list;
 
@@ -17,6 +17,7 @@ public class CourseServiceImpl implements CourseSerivce {
         list = new ArrayList<>();
         list.add(new Course(123, "JAVA Core Course", "all java concepts"));
         list.add(new Course(345, "SpringBoot Core Course", "rest api concepts"));
+
     }
 
     @Override

@@ -11,23 +11,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springrest.crud.entities.Course;
-import com.springrest.crud.sevices.CourseSerivce;
+import com.springrest.crud.sevices.CourseService;
 
 @RestController
 public class MyController {
 
     @Autowired
-    private CourseSerivce courseService;
+    private CourseService courseService;
 
     @GetMapping("/home")
     public String home() {
         return "this is home page";
     }
 
-//    @GetMapping(path="/courses",method = RequestMethod.GET)
+//  @GetMapping(path="/courses",method = RequestMethod.GET)
     @GetMapping("/courses")
     public List<Course> getCourses() {
-
         return this.courseService.getCourses();
     }
 
@@ -41,11 +40,13 @@ public class MyController {
     public Course addCourse(@RequestBody Course course) {
 
         return courseService.addCourse(course);
-
     }
 
     @PutMapping("/courses")
     public String updateCourse(@RequestBody Course course) {
         return courseService.updateCourse(course);
     }
+//    public Course updateCourse(@RequestBody Course course) {
+//        return courseService.updateCourse(course);
+//    }
 }
