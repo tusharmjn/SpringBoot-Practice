@@ -42,4 +42,15 @@ public class CourseServiceImpl implements CourseSerivce {
         return course;
     }
 
+    @Override
+    public String updateCourse(Course course) {
+        for (Course c : list) {
+            if (c.getId() == course.getId()) {
+                c.setTitle(course.getTitle());
+                c.setDescription(course.getDescription());
+            }
+        }
+        return "Sucessful";
+    }
+
 }

@@ -12,4 +12,6 @@ public interface CourseSerivce {
 
     public Course addCourse(Course course);
 
+    public String updateCourse(Course course);
+
 }
