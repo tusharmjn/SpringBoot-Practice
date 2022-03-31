@@ -11,7 +11,6 @@ import com.springrest.jpa.repository.CourseRepository;
 @Service
 public class CourseServiceImpl implements CourseService {
 
-//  List<Course> list;
     @Autowired
     public CourseRepository courseRepo;
 
@@ -32,6 +31,12 @@ public class CourseServiceImpl implements CourseService {
     public Course updateCourse(Course course) {
         courseRepo.save(course);
         return course;
+    }
+
+    @Override
+    public void deleteCourse(Long courseId) {
+        Course entity = courseRepo.getById(courseId);
+        courseRepo.delete(entity);
     }
 
 }
